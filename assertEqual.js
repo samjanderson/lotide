@@ -10,5 +10,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual(5, 10);
+
