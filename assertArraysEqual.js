@@ -12,7 +12,7 @@
 
 //this should leverage eqArrays so the first parameter should be the call back and second true
 const assertArraysEqual = (callback, expected) => {
-  if (callback === expected) {
+  if (eqArrays(callback, expected)) {
     console.log(`👍👍Assertion Passed: ${callback} === ${expected}`);
   } else {
     console.log(`👎👎Assertion Failed: ${callback} !== ${expected}`);
@@ -34,4 +34,5 @@ const eqArrays = (arr1, arr2) => {
   return true;
 };
 
-//console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => should PASS
+console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => should PASS
+console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2]), false)); // => should PASS
