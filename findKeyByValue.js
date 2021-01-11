@@ -4,7 +4,7 @@
 //to see what is inside key use either bracket or dot notation
 const findKeyByValue = function (object, value) {
   for (let key in object) {  // iterates over properties of object
-    if (object[key] === value) {
+    if (object[key] === value) {   //object[key] => object[drama] => 'the wire'
       return key
     }
   }

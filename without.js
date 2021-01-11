@@ -8,24 +8,52 @@
 //if an item in sourceArray matches an item in itemsToRemove filter out that item
 
 
-const without = (sourceArray, itemsToRemoveArray) => {
-  let sourceArrayCopy = [...sourceArray]; //uses the spread operator to iterate every item in the new array, stops us from mutating the original array
-  //we made a copy to not have to mutate the original array
-  for (let i = 0; i < itemsToRemoveArray.length; i++) {
-    //console.log(itemsToRemoveArray[i]);
-    const locationOfItemsToBeRemoved = sourceArrayCopy.indexOf(itemsToRemoveArray[i])
-    if (locationOfItemsToBeRemoved > -1) {    ///only manipulate the array if the element is present, this tells us there is an element we need to remove
-      sourceArrayCopy.splice(locationOfItemsToBeRemoved, 1)
+// const without = (sourceArray, itemsToRemoveArray) => {
+//   let sourceArrayCopy = [...sourceArray]; //uses the spread operator to iterate every item in the new array, stops us from mutating the original array
+//   //we made a copy to not have to mutate the original array
+//   for (let i = 0; i < itemsToRemoveArray.length; i++) {
+//     //console.log(itemsToRemoveArray[i]);
+//     const locationOfItemsToBeRemoved = sourceArrayCopy.indexOf(itemsToRemoveArray[i])
+//     if (locationOfItemsToBeRemoved > -1) {    ///only manipulate the array if the element is present, this tells us there is an element we need to remove
+//       sourceArrayCopy.splice(locationOfItemsToBeRemoved, 1)
+//     }
+//   }
+//   //console.log(sourceArrayCopy)
+//   return sourceArrayCopy;
+// }
+
+
+
+
+// check to see if the target is within an array
+const checkItem = function(target, array) { //target is the item from the source array
+  for (let item of array) {                 //comparing against the itemsToRemove array
+    if (item === target) {                   //item is from items to remove array
+      return false;
     }
   }
-  //console.log(sourceArrayCopy)
-  return sourceArrayCopy;
-}
+  return true;
+};
 
 
+
+const without = function(source, itemsToRemove) { //this loops through source array, puts each into checkItem
+  let output = [];
+  for (let item of source) {
+    if (checkItem(item, itemsToRemove)) { 
+      output.push(item); 
+    }
+  }
+  return output;
+};
+
+
+
+
+
+console.log(without([1, 2, 3], [2, 3]))
 //console.log(without([1, 2, 3], [1])) // => [2, 3]
 //console.log(without([1, 2, 3], [2, 3, 1]))
-//console.log(without([1, 2, 3], [2, 3]))
 
 const assertArraysEqual = (callback, expected) => {
   if (eqArrays(callback, expected)) {

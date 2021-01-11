@@ -7,15 +7,15 @@
 
 //a callback is a function that the function that your currently in tells it do something
 //its like a servant or a butler to the main function
-
-const takeUntil = function (array, callback) {
-  const resultArray = []
+// LET US LEARN
+const takeUntil = function (array, callback) { //array is data1 and callback is the function
+  const resultArray = []   ///array = 1, 2, 5, 7, 2, -1, 2, 4, 5]; and callback = x => x < 0
   for (let item of array) {  //can break from for of, for but not foreach, map, filter, reduce etc
     if (callback(item) === true) { //substituting item for x if (x < 0(item) === true )
-      break;
+      break; //if the item === true it will break out of the loop and stop the process
     }
 
-    resultArray.push(item)
+    resultArray.push(item) //item is pushed forward and the loop repeats
 
     //console.log(item)
     //resultArray.push(callback(item))
@@ -28,19 +28,20 @@ const takeUntil = function (array, callback) {
 // }
 //anonymous function
 //const myFunc = function(x) {
-  //return x * 2
+//return x * 2
 //}
 //anonymous arrow function
-// const myFunc = x => {
-//   return x * 2
-// }
+//  = x =>   x < 0
 
-//const myFunc = x => x > 1
-//const myFunc = () => x > 1
+//curly braces means explicit function
+//take away curly braces and return it becomes implicit
+
+// const myFunc = x => x > 1
+// const myFunc = () => x > 1
 
 //INPUT
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
+const results1 = takeUntil(data1, x => x < 0);  //1 => 1 < 0 return true
 console.log(results1);
 
 
@@ -49,6 +50,9 @@ console.log('---');
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2 = takeUntil(data2, x => x === ',');
 console.log(results2);
+
+//CALLBACK FUNCTION
+
 
 // //EXPECTED OUTPUT
 // [ 1, 2, 5, 7, 2 ]
@@ -81,9 +85,20 @@ const eqArrays = (arr1, arr2) => {
 
 
 
-  assertArraysEqual( takeUntil(data2, x => x === ','),[ 'I\'ve', 'been', 'to', 'Hollywood' ])
+
 
   // assertArraysEqual(
   //   takeUntil(data2, x => x === ','),
   //   [ 'I\'ve', 'been', 'to', 'Hollywood' ]
   // )
+
+  const sayHi = () => {
+    console.log('hello world')
+    }
+    
+
+  const myFunc = (callback) => {
+    callback()
+    }
+    
+    myFunc()
