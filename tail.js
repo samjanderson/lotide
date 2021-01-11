@@ -9,4 +9,4 @@ const tail = (array) => {
 
 
 
-module.exports = tail
+module.exports = tail;

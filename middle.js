@@ -1,22 +1,16 @@
-//implement middle which will take in an array and return the middle-most elements
-//for arrays with one or two elements there is no middle so return empty
-//for arrays wtih odd numbers a single middle element should be returned
-//for arrays with even numbers of elements an array containing two elements in the middle should be returned
-//use assertArraysEqual to test new function
 
-// ACTUAL FUNCTION
 const middle = function(array) {
-    if (array.length < 3) {  //first condition works
+    if (array.length < 3) {  
       return []
     }
-    else if (array.length % 2 === 0) {    //second condition works
+    else if (array.length % 2 === 0) {   
       let middlePoint = array.length / 2 - 1 //put -1 because without it, it will return the second middle number, var stores index position
       return [array[middlePoint], array[middlePoint + 1]];
     }
     else if (array.length % 2 !== 0) {
-      return array[Math.floor(array.length /2)]
+      return [array[Math.floor(array.length /2)]];
     }
-  }
+  };
 
 
 
