@@ -1,4 +1,3 @@
-// const assertEqual = require('./assertEqual');
 
 //create a function head which returns the first item in the array
 //it should not return the first element as an array. it should simply return the element itself
