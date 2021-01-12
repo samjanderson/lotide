@@ -9,18 +9,18 @@
 //its like a servant or a butler to the main function
 // LET US LEARN
 const takeUntil = function (array, callback) { //array is data1 and callback is the function
-  const resultArray = []   ///array = 1, 2, 5, 7, 2, -1, 2, 4, 5]; and callback = x => x < 0
+  const resultArray = [];   ///array = 1, 2, 5, 7, 2, -1, 2, 4, 5]; and callback = x => x < 0
   for (let item of array) {  //can break from for of, for but not foreach, map, filter, reduce etc
     if (callback(item) === true) { //substituting item for x if (x < 0(item) === true )
       break; //if the item === true it will break out of the loop and stop the process
     }
 
-    resultArray.push(item) //item is pushed forward and the loop repeats
+    resultArray.push(item); //item is pushed forward and the loop repeats
 
     //console.log(item)
     //resultArray.push(callback(item))
   }
-  return resultArray
+  return resultArray;
 }
 //function takes some input does something with it and outputs something
 // const myFunc = () => {  //this is an anonymous function it is just stored inside of a variable
@@ -40,16 +40,16 @@ const takeUntil = function (array, callback) { //array is data1 and callback is 
 // const myFunc = () => x > 1
 
 //INPUT
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);  //1 => 1 < 0 return true
-console.log(results1);
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// const results1 = takeUntil(data1, x => x < 0);  //1 => 1 < 0 return true
+// console.log(results1);
 
 
-console.log('---');
+// console.log('---');
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
-console.log(results2);
+// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+// const results2 = takeUntil(data2, x => x === ',');
+// console.log(results2);
 
 //CALLBACK FUNCTION
 
@@ -71,7 +71,7 @@ const assertArraysEqual = (callback, expected) => {
 
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
-    return false
+    return false;
   }
   for (var i = 0; i < arr1.length; i++) {
     // console.log('arr1', arr1[i])
@@ -91,14 +91,3 @@ const eqArrays = (arr1, arr2) => {
   //   takeUntil(data2, x => x === ','),
   //   [ 'I\'ve', 'been', 'to', 'Hollywood' ]
   // )
-
-  const sayHi = () => {
-    console.log('hello world')
-    }
-    
-
-  const myFunc = (callback) => {
-    callback()
-    }
-    
-    myFunc()

@@ -1,12 +1,3 @@
-//implement without which will return a subset of a given array, removing unwanted elements
-//this function should take in a source array and a itemsToRemove array
-//it should return a new array with only those elements from source that are not present in the itemsToRemove array
-//use assertArraysEqual to write test cases below the definition of your function
-//make sure that the original array is not modified** (test this at the end) array.filter() creates a new array without modifying the old one
-
-//loop through sourceArray and itemsToRemoveArray
-//if an item in sourceArray matches an item in itemsToRemove filter out that item
-
 
 // const without = (sourceArray, itemsToRemoveArray) => {
 //   let sourceArrayCopy = [...sourceArray]; //uses the spread operator to iterate every item in the new array, stops us from mutating the original array
@@ -26,7 +17,7 @@
 
 
 // check to see if the target is within an array
-const checkItem = function(target, array) { //target is the item from the source array
+const checkItem = function (target, array) { //target is the item from the source array
   for (let item of array) {                 //comparing against the itemsToRemove array
     if (item === target) {                   //item is from items to remove array
       return false;
@@ -37,11 +28,11 @@ const checkItem = function(target, array) { //target is the item from the source
 
 
 
-const without = function(source, itemsToRemove) { //this loops through source array, puts each into checkItem
+const without = function (source, itemsToRemove) { //this loops through source array, puts each into checkItem
   let output = [];
   for (let item of source) {
-    if (checkItem(item, itemsToRemove)) { 
-      output.push(item); 
+    if (checkItem(item, itemsToRemove)) {
+      output.push(item);
     }
   }
   return output;
@@ -51,9 +42,9 @@ const without = function(source, itemsToRemove) { //this loops through source ar
 
 
 
-console.log(without([1, 2, 3], [2, 3]))
-//console.log(without([1, 2, 3], [1])) // => [2, 3]
-//console.log(without([1, 2, 3], [2, 3, 1]))
+// console.log(without([1, 2, 3], [2, 3]))
+// //console.log(without([1, 2, 3], [1])) // => [2, 3]
+// //console.log(without([1, 2, 3], [2, 3, 1]))
 
 const assertArraysEqual = (callback, expected) => {
   if (eqArrays(callback, expected)) {
@@ -66,7 +57,7 @@ const assertArraysEqual = (callback, expected) => {
 
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
-    return false
+    return false;
   }
   for (var i = 0; i < arr1.length; i++) {
     // console.log('arr1', arr1[i])
@@ -82,9 +73,9 @@ const eqArrays = (arr1, arr2) => {
 //console.log(without([1, 2, 3], [1])) // => [2, 3]
 //console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
 //console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true))
-console.log(assertArraysEqual(without([1, 2, 3], [1, 2]), [3]))
-console.log(assertArraysEqual(without([1, 8, 10], [8, 9, 7]), [1, 10]))
-console.log(assertArraysEqual(without([1, 14, 7], [3, 2]), [1, 14, 7]))
+// console.log(assertArraysEqual(without([1, 2, 3], [1, 2]), [3]))
+// console.log(assertArraysEqual(without([1, 8, 10], [8, 9, 7]), [1, 10]))
+// console.log(assertArraysEqual(without([1, 14, 7], [3, 2]), [1, 14, 7]))
 
 //console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => should PASS
 

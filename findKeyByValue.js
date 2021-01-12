@@ -1,11 +1,7 @@
-//takes in an object and a value it should scan object and return the first key which contains the given value
-//if no key with that given value is found, return undefined
-//use object keys
-//to see what is inside key use either bracket or dot notation
 const findKeyByValue = function (object, value) {
   for (let key in object) {  // iterates over properties of object
     if (object[key] === value) {   //object[key] => object[drama] => 'the wire'
-      return key
+      return key;
     }
   }
 }
@@ -16,7 +12,7 @@ const bestTVShowsByGenre = {
   drama: "The Wire"
 };
 
-console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
+// console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
 
 
 const assertEqual = function (actual, expected) {
@@ -30,5 +26,5 @@ const assertEqual = function (actual, expected) {
 
 
 
- assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
- assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+//  assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+//  assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);

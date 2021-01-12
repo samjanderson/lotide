@@ -1,6 +1,6 @@
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
-    return false
+    return false;
   }
   for (var i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) {
@@ -35,18 +35,18 @@ const assertObjectsEqual = (actual, expected) => {
 };
 
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// eqObjects(cd, dc); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// eqObjects(cd, cd2); // => false
 
-// console.log(assertObjectsEqual(eqObjects(cd, dc), true)); // => true
-// console.log(assertObjectsEqual(eqObjects(cd, cd2), false)); // => false
+// // console.log(assertObjectsEqual(eqObjects(cd, dc), true)); // => true
+// // console.log(assertObjectsEqual(eqObjects(cd, cd2), false)); // => false
 
 
-assertObjectsEqual(cd, dc);
-assertObjectsEqual(cd, cd2);
+// assertObjectsEqual(cd, dc);
+// assertObjectsEqual(cd, cd2);
 //your inspect is in the assertObjectsEqual function, not the eqObjects function. 
 // So you'll have to run the assertObjectsEqual function instead 

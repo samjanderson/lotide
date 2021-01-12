@@ -4,7 +4,7 @@
 const map = function (array, callback) { 
   const results = [];
   for (let item of array) {
-    results.push(callback(item))
+    results.push(callback(item));
     // console.log('item BEFORE: ', item);
     // console.log('item AFTER: ', callback(item));
     // console.log('---');
@@ -12,9 +12,9 @@ const map = function (array, callback) {
   return results;
 }
 
-const words = ["ground", "control", "to", "major", "tom"];
-const results1 = map(words, word => word[0]);
-console.log(results1);
+// const words = ["ground", "control", "to", "major", "tom"];
+// const results1 = map(words, word => word[0]);
+// console.log(results1);
 
 const assertArraysEqual = (callback, expected) => {
   if (eqArrays(callback, expected)) {
@@ -39,7 +39,7 @@ const eqArrays = (arr1, arr2) => {
   return true;
 };
 
-console.log(assertArraysEqual(eqArrays(results1, ['g', 'c', 't', 'm', 't']), true));
+// console.log(assertArraysEqual(eqArrays(results1, ['g', 'c', 't', 'm', 't']), true));
 
 //instructor version
 // const assertEqual = (actual, expected) => {

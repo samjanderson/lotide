@@ -3,7 +3,7 @@
 
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
-    return false
+    return false;
   }
   for (var i = 0; i < arr1.length; i++) {
    // console.log('arr1', arr1[i])

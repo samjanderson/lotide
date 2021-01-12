@@ -1,11 +1,11 @@
 function countLetters (string) {
-  string = string.split(' ').join('')
+  string = string.split(' ').join('');
   let totalCount = {};
   for (let char of string) {
     if (totalCount[char]) {
-      totalCount[char] +=1
+      totalCount[char] +=1;
     } else {
-      totalCount[char] =1
+      totalCount[char] =1;
     }
   }
   return totalCount;
@@ -19,4 +19,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-console.log(countLetters("lighthouse in the house"))
+// console.log(countLetters("lighthouse in the house"));

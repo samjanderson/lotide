@@ -7,7 +7,7 @@
 
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
-    return false
+    return false;
   }
   for (var i = 0; i < arr1.length; i++) {
     // console.log('arr1', arr1[i])
@@ -58,13 +58,13 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// eqObjects(cd, dc); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// eqObjects(cd, cd2); // => false
 
-console.log(assertEqual(eqObjects(cd, dc), true)); // => true
-console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
+// console.log(assertEqual(eqObjects(cd, dc), true)); // => true
+// console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
 
